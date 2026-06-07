@@ -1,12 +1,15 @@
 package com.betesepmu.vendor.ui.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -67,21 +70,30 @@ fun SectionCard(
     title: String,
     modifier: Modifier = Modifier,
     icon: ImageVector? = null,
+    accent: Color = androidx.compose.material3.MaterialTheme.colorScheme.primary,
     content: @Composable ColumnScope.() -> Unit,
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-        shape = RoundedCornerShape(18.dp),
+        colors = CardDefaults.cardColors(containerColor = androidx.compose.material3.MaterialTheme.colorScheme.surface),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        shape = RoundedCornerShape(16.dp),
     ) {
+        // border-t-4 accent strip, like the website cards.
+        Box(Modifier.fillMaxWidth().height(4.dp).background(accent))
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 if (icon != null) {
-                    Icon(icon, null, tint = androidx.compose.material3.MaterialTheme.colorScheme.primary)
+                    Icon(icon, null, tint = accent)
                     Spacer(Modifier.width(8.dp))
                 }
-                Text(title, fontWeight = FontWeight.SemiBold, fontSize = 16.sp)
+                Text(
+                    title.uppercase(),
+                    fontWeight = FontWeight.Black,
+                    fontSize = 14.sp,
+                    letterSpacing = 0.5.sp,
+                    color = androidx.compose.material3.MaterialTheme.colorScheme.onSurface,
+                )
             }
             content()
         }

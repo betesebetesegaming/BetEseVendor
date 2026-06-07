@@ -72,6 +72,23 @@ object PmuPricing {
 
     fun minHorses(betType: BetTypeOption): Int = pricing(betType).minHorses
 
+    /** Pattern length for a Champ-de-Base (with X) selection — mirrors HorseSelector.getStrictLimit. */
+    fun strictLimit(betType: BetTypeOption): Int = when (betType) {
+        BetTypeOption.SimpleGagnant, BetTypeOption.SimplePlace -> 1
+        BetTypeOption.CoupleGagnant, BetTypeOption.CouplePlace -> 2
+        BetTypeOption.Tierce -> 3
+        BetTypeOption.Quarte, BetTypeOption.Multi4 -> 4
+        BetTypeOption.Quinte, BetTypeOption.Multi5 -> 5
+        BetTypeOption.Multi6 -> 6
+        BetTypeOption.Multi7 -> 7
+    }
+
+    /** Whether this bet type supports an X (field/champ) marker. */
+    fun hasXOption(betType: BetTypeOption): Boolean = pricing(betType).xPriceMap.isNotEmpty()
+
+    /** Maximum number of X markers allowed for this bet type. */
+    fun maxX(betType: BetTypeOption): Int = pricing(betType).xPriceMap.keys.maxOrNull() ?: 0
+
     /**
      * Cost for one unit (multiplier = 1) of a selection. Mirrors `App.tsx` updateBetSlip:
      *   perHorsePrice → (numbers + X) × perHorsePrice

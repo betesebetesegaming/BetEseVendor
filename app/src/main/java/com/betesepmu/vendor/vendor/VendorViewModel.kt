@@ -108,8 +108,14 @@ class VendorViewModel(app: Application) : AndroidViewModel(app) {
         .map { sels -> sels.sumOf { it.lineTotal } }
         .stateIn(viewModelScope, SharingStarted.Eagerly, 0.0)
 
-    /** Add a selection to the slip. Returns an error message, or null on success. */
-    fun addSelection(race: Race, betType: BetTypeOption, numbers: List<Int>, xCount: Int): String? {
+    /**
+     * Add a selection to the slip from an ordered [pattern] (the HorseSelector sequence of "X"
+     * markers and horse numbers). Numbers + X count are derived from it; the exact order is
+     * preserved on the slip and the printed ticket. Returns an error message, or null on success.
+     */
+    fun addSelection(race: Race, betType: BetTypeOption, pattern: List<String>): String? {
+        val numbers = pattern.filter { it != "X" }.mapNotNull { it.toIntOrNull() }
+        val xCount = pattern.count { it == "X" }
         val min = PmuPricing.minHorses(betType)
         if (numbers.size + xCount < min) return "Select at least $min horses for ${betType.label}."
         val unitCost = PmuPricing.costFor(betType, numbers.size, xCount)
@@ -122,7 +128,7 @@ class VendorViewModel(app: Application) : AndroidViewModel(app) {
             xCount = xCount,
             cost = unitCost,
             multiplier = 1,
-            pattern = List(xCount) { "X" } + numbers.map { it.toString() },
+            pattern = pattern,
         )
         return null
     }

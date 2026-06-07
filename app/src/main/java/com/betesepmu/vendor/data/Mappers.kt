@@ -208,6 +208,8 @@ internal fun DocumentSnapshot.toTicket(): Ticket {
         totalCost = anyToDouble(get("total_cost")),
         winnings = get("winnings")?.let { anyToDouble(it) },
         transactionChannel = str("transaction_channel"),
+        paidById = str("paid_by_id"),
+        paidByName = str("paid_by_name"),
     )
 }
 

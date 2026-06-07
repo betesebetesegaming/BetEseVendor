@@ -11,8 +11,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ReceiptLong
-import androidx.compose.material.icons.filled.GridView
 import androidx.compose.material.icons.filled.PointOfSale
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
@@ -34,8 +32,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.betesepmu.vendor.ui.preview.PreviewOverlay
-import com.betesepmu.vendor.ui.queue.QueueScreen
-import com.betesepmu.vendor.ui.samples.SamplesScreen
 import com.betesepmu.vendor.ui.settings.SettingsScreen
 import com.betesepmu.vendor.ui.splash.BetEseSplash
 import com.betesepmu.vendor.ui.vendor.VendorDashboardScreen
@@ -44,8 +40,6 @@ import kotlinx.coroutines.delay
 
 private enum class Tab(val label: String, val icon: ImageVector) {
     DASHBOARD("Terminal", Icons.Filled.PointOfSale),
-    SAMPLES("Samples", Icons.AutoMirrored.Filled.ReceiptLong),
-    QUEUE("Queue", Icons.Filled.GridView),
     SETTINGS("Settings", Icons.Filled.Settings),
 }
 
@@ -98,8 +92,6 @@ private fun MainScaffold(vm: MainViewModel, vendorVm: VendorViewModel) {
         Box(Modifier.padding(padding)) {
             when (tab) {
                 Tab.DASHBOARD -> VendorDashboardScreen(vendorVm)
-                Tab.SAMPLES -> SamplesScreen(vm)
-                Tab.QUEUE -> QueueScreen(vm)
                 Tab.SETTINGS -> SettingsScreen(vm, vendorVm)
             }
         }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- BetEse brand palette (white & green, with the logo's gold accent) -->
-    <color name="brand_green">#FF149E4B</color>
-    <color name="brand_green_dark">#FF0E7C39</color>
-    <color name="brand_green_light">#FFE6F4EC</color>
+    <!-- BetEse brand palette — matches the betesepmu website (#008000 green, #FFFF00 yellow). -->
+    <color name="brand_green">#FF008000</color>
+    <color name="brand_green_dark">#FF006400</color>
+    <color name="brand_green_light">#FFE3F2E3</color>
     <color name="brand_gold">#FFECC02C</color>
-    <color name="brand_black">#FF1B1B1B</color>
+    <color name="brand_yellow">#FFFFFF00</color>
+    <color name="brand_black">#FF111827</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

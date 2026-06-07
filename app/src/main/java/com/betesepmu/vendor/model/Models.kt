@@ -108,6 +108,8 @@ data class Ticket(
     val totalCost: Double = 0.0,
     val winnings: Double? = null,
     val transactionChannel: String? = null,
+    val paidById: String? = null,
+    val paidByName: String? = null,
 ) {
     val isCancelable: Boolean get() = status == TicketStatus.ACTIVE || status == TicketStatus.BOOKED
     val isPayable: Boolean get() = status == TicketStatus.ACTIVE || status == TicketStatus.WINNING

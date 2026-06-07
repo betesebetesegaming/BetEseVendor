@@ -2,19 +2,27 @@ package com.betesepmu.vendor.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// BetEse brand — white & green, with the logo's gold accent.
-val BrandGreen = Color(0xFF149E4B)
-val BrandGreenDark = Color(0xFF0E7C39)
-val BrandGreenLight = Color(0xFFE6F4EC)
+// BetEse brand — matches the live betesepmu website exactly: pure green #008000 + yellow #FFFF00
+// on a gray-100 page with white cards.
+val BrandGreen = Color(0xFF008000)
+val BrandGreenDark = Color(0xFF006400)
+val BrandGreenLight = Color(0xFFE3F2E3)
 val BrandGold = Color(0xFFECC02C)
-val BrandBlack = Color(0xFF1B1B1B)
+val BrandYellow = Color(0xFFFFFF00)
+val BrandBlack = Color(0xFF111827)
 
-// Light scheme
-val LightBackground = Color(0xFFF6FAF7)
+// Web-matching accents used directly by the vendor UI (mirror Tailwind classes).
+val WebYellowCard = Color(0xFFFEF9C3)   // bg-yellow-100
+val WebYellowAccent = Color(0xFFEAB308) // yellow-500 (left border + reprint button)
+val WebGreenTint = Color(0xFFE6F2E6)    // bg-betese-green/10
+val WebGray800 = Color(0xFF1F2937)      // "Return to Menu" button
+
+// Light scheme — gray-100 page on white cards, like the website.
+val LightBackground = Color(0xFFF3F4F6)
 val LightSurface = Color(0xFFFFFFFF)
-val LightSurfaceVariant = Color(0xFFE8F1EA)
-val LightOutline = Color(0xFFBFD8C8)
-val OnLight = Color(0xFF14241A)
+val LightSurfaceVariant = Color(0xFFE5E7EB)
+val LightOutline = Color(0xFFD1D5DB)
+val OnLight = Color(0xFF111827)
 
 // Dark scheme
 val DarkGreen = Color(0xFF52C883)
