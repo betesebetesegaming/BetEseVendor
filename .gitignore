@@ -16,3 +16,10 @@ local.properties
 .kotlin/
 *.apk
 *.aab
+
+# Secrets — NEVER commit these (repo is public!)
+.env
+.env.*
+!.env.example
+*.token
+.betese_gh_token
