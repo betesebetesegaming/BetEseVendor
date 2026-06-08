@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BetEse Vendor — Download App</title>
+  <meta name="description" content="Download the BetEse Vendor app — on-device thermal print broker for vendors. Get the latest release and previous versions." />
+  <meta name="theme-color" content="#008000" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="BetEse Vendor — Download App" />
+  <meta property="og:description" content="Download the BetEse Vendor Android app. Latest release plus all previous versions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/icon.png" />
+
+  <link rel="icon" type="image/png" href="/assets/icon.png" />
+  <link rel="apple-touch-icon" href="/assets/icon.png" />
+  <link rel="preconnect" href="https://api.github.com" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/icon.png" alt="BetEse logo" width="40" height="40" />
+      <span>BetEse <strong>Vendor</strong></span>
+    </a>
+    <a class="header-link" href="https://github.com/betesebetesegaming/BetEseVendor" target="_blank" rel="noopener">View on GitHub ↗</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="pill">📱 Android App · For Vendors</span>
+        <h1>Download the <span class="accent">BetEse Vendor</span> app</h1>
+        <p class="subtitle">On-device thermal print broker. Install the latest version on your vendor terminal in seconds.</p>
+
+        <div id="latest" class="latest-card" aria-live="polite">
+          <div class="latest-loading">
+            <span class="spinner" aria-hidden="true"></span>
+            <span>Loading the latest release…</span>
+          </div>
+        </div>
+
+        <p class="fineprint" id="fineprint" hidden>
+          Android only · Requires Android 8.0+ · You may need to allow installs from unknown sources
+        </p>
+      </div>
+    </section>
+
+    <!-- HOW TO INSTALL -->
+    <section class="how">
+      <h2>How to install</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <div>
+            <strong>Tap “Download Latest APK”</strong>
+            <p>The <code>.apk</code> file saves to your phone’s Downloads.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <div>
+            <strong>Allow the install</strong>
+            <p>If Android warns about “unknown sources,” tap <em>Settings → Allow from this source</em>, then go back.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div>
+            <strong>Open &amp; install</strong>
+            <p>Tap the downloaded file, press <em>Install</em>, then open <strong>BetEse Vendor</strong>.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PREVIOUS RELEASES -->
+    <section class="releases">
+      <h2>All releases</h2>
+      <p class="releases-sub">Every version, newest first. Tap any version to download its APK.</p>
+      <div id="releases-list" class="releases-list">
+        <div class="latest-loading">
+          <span class="spinner" aria-hidden="true"></span>
+          <span>Loading releases…</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="/assets/icon.png" alt="" width="28" height="28" />
+    <p>
+      &copy; <span id="year"></span> BetEse PMU · Vendor App ·
+      <a href="https://github.com/betesebetesegaming/BetEseVendor" target="_blank" rel="noopener">Source on GitHub</a>
+    </p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
