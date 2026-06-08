@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 11 and below do NOT apply a circular mask to the splash icon, so the
+  rounded-square logo can fill the icon area normally. (Android 12+ uses the
+  padded variant in drawable-v31/splash_icon.xml.)
+-->
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/betese_logo"
+    android:gravity="fill" />

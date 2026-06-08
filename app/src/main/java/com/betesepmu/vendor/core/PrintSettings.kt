@@ -25,7 +25,7 @@ data class PrintSettings(
     val ditherMode: DitherMode = DitherMode.FLOYD_STEINBERG,
     val density: Int = 8,                 // 0..15, mapped to head density where supported
     val autoCut: Boolean = true,
-    val cutFeedDots: Int = 80,            // feed before cut so content clears the blade
+    val cutFeedDots: Int = 60,            // feed before cut so content clears the blade (kept modest to limit bottom whitespace)
     val openCashDrawer: Boolean = false,
     val beepOnComplete: Boolean = true,
     val copies: Int = 1,

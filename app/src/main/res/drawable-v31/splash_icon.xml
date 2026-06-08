@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 12+ masks the splash icon to a circle. Inset the rounded-square logo to
+  ~56% of the icon area (22% transparent margin all round) so the whole square,
+  including its rounded corners, sits inside that circle instead of being clipped.
+-->
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/betese_logo"
+    android:inset="22%" />

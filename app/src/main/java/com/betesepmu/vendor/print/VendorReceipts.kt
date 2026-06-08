@@ -74,7 +74,6 @@ class VendorReceipts(context: Context) {
         feed(1)
         center("Status: ${ticket.status}")
         center(settings.footerText)
-        feed(2)
         if (settings.beepOnComplete) beep(1)
         cut()
     }
@@ -101,7 +100,6 @@ class VendorReceipts(context: Context) {
         feed(1)
         center("Funds credited to the customer wallet")
         center(settings.footerText)
-        feed(2)
         if (settings.beepOnComplete) beep(1)
         cut()
     }
@@ -127,7 +125,6 @@ class VendorReceipts(context: Context) {
         feed(1)
         center("Cash paid to the customer")
         center(settings.footerText)
-        feed(2)
         if (settings.beepOnComplete) beep(1)
         cut()
     }
@@ -159,7 +156,6 @@ class VendorReceipts(context: Context) {
         feed(1)
         center("BETESE PMU — OFFICIAL")
         center(dateTime(Date()))
-        feed(2)
         if (settings.beepOnComplete) beep(1)
         cut()
     }
@@ -195,7 +191,6 @@ class VendorReceipts(context: Context) {
         feed(1)
         center("Official Terminal Report")
         center(dateTime(Date()))
-        feed(2)
         if (settings.beepOnComplete) beep(1)
         cut()
     }

@@ -120,7 +120,9 @@ data class TextStyle(
 ) {
     companion object {
         val NORMAL = TextStyle()
-        val TITLE = TextStyle(align = Align.CENTER, bold = true, widthMul = 2, heightMul = 2)
+        // Normal width (not double) so a ~10-char title like "BETESE PMU" never overflows
+        // narrow heads; still bold + double-height so it reads as the title.
+        val TITLE = TextStyle(align = Align.CENTER, bold = true, widthMul = 1, heightMul = 2)
         val HEADING = TextStyle(bold = true)
         val CENTER = TextStyle(align = Align.CENTER)
         val CENTER_BOLD = TextStyle(align = Align.CENTER, bold = true)
